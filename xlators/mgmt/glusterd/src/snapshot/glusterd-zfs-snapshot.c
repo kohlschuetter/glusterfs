@@ -26,7 +26,9 @@
 #include "mntent_compat.h"
 #endif
 
+#if !defined(ZFS_COMMAND)
 #define ZFS_COMMAND "/sbin/zfs"
+#endif
 
 extern char snap_mount_dir[VALID_GLUSTERD_PATHMAX];
 
