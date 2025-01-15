@@ -27,7 +27,8 @@ typedef int64_t off64_t;
 #endif
 #ifndef HAVE_INET_NET_PTON
 #include <stddef.h>
-int inet_net_pton(int af, const char *src, void *dst, size_t size);
+int
+inet_net_pton(int af, const char *src, void *dst, size_t size);
 #endif
 #ifndef _PATH_MOUNTED
 #define _PATH_MOUNTED "/etc/mtab"
