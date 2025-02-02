@@ -5,6 +5,7 @@ addonexec_SCRIPTS += peer_add_secret_pub
 if USE_SYSTEMD
 addonexec_SCRIPTS += mount-shared-storage.sh
 endif
+addonexec_SCRIPTS += generic-snapshot.sh
 endif
 
 EditorModedir = $(docdir)

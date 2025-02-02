@@ -4151,6 +4151,10 @@ glusterd_snapshot_plugin_by_name(char *name,
         *snap_ops = &lvm_snap_ops;
     else if (strcmp(name, "ZFS") == 0)
         *snap_ops = &zfs_snap_ops;
+#ifdef GF_WITH_GENERIC_SNAPSHOT
+    else if (strcmp(name, "GENERIC") == 0)
+        *snap_ops = &generic_snap_ops;
+#endif
 
     gf_msg_debug(this->name, 0, "Loaded Snapshot plugin %s", name);
 }
@@ -4160,6 +4164,9 @@ glusterd_snapshot_probe(char *brick_path, glusterd_brickinfo_t *brickinfo)
 {
     struct glusterd_snap_ops *glusterd_snap_backend[] = {
         &lvm_snap_ops,
+#ifdef GF_WITH_GENERIC_SNAPSHOT
+        &generic_snap_ops,
+#endif
         &zfs_snap_ops,
         0,
     };
