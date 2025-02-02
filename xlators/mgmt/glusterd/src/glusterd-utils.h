@@ -151,6 +151,9 @@ struct glusterd_snap_ops {
 
 extern struct glusterd_snap_ops lvm_snap_ops;
 extern struct glusterd_snap_ops zfs_snap_ops;
+#ifdef GF_WITH_GENERIC_SNAPSHOT
+extern struct glusterd_snap_ops generic_snap_ops;
+#endif
 
 gf_boolean_t
 glusterd_mntopts_exists(const char *str, const char *opts);
